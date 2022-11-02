@@ -2,6 +2,7 @@
 
 Required Softwares:
 - Node ^18
+- Ganache
 
 Steps to follow
 
@@ -40,3 +41,11 @@ npx hardhat verify --network goerli <address> <unlock time>
 # Clears the cache and deletes all artifacts
 npx hardhat clear
 ```
+
+Adding Ganache account to metamask
+- Click on "Add Network"
+- Network Name: localganache
+- New RPC URL	: HTTP://127.0.0.1:7545
+- Chain id	: 1337
+- Currency	: ETH
+
