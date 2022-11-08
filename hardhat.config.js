@@ -1,18 +1,24 @@
 require("@nomicfoundation/hardhat-toolbox");
 require("dotenv").config();
 
-/** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
   solidity: "0.8.17",
-  defaultNetwork: "localganache",
+  defaultNetwork: "hardhat",
   networks: {
+    hardhat: {},
     goerli: {
       url: process.env.ALCHEMY_RPC_URL,
-      accounts: [process.env.GOERLI_PRIVATE_KEY],
+      accounts: [process.env.PRIVATE_KEY],
+      chainId: 5,
     },
     localganache: {
       url: process.env.GANACHE_RPC_URL,
       accounts: [process.env.GANACHE_PRIVATE_KEY],
+    },
+    polygon: {
+      url: process.env.ALCHEMY_RPC_URL_POLYGON,
+      accounts: [process.env.PRIVATE_KEY],
+      chainId: 80001,
     },
   },
   etherscan: {
