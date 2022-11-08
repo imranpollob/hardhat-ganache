@@ -24,8 +24,4 @@ contract Counter {
         name = _name;
         return name;
     }
-
-    function getName() public view returns (string memory) {
-        return name;
-    }
 }

@@ -4,6 +4,7 @@ require("dotenv").config();
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
   solidity: "0.8.17",
+  defaultNetwork: "localganache",
   networks: {
     goerli: {
       url: process.env.ALCHEMY_RPC_URL,

@@ -1,17 +1,17 @@
-const { expect, assert } = require("chai");
+const { expect } = require("chai");
 const { ethers } = require("hardhat");
 
 describe("Counter", () => {
-  describe("Deployment", () => {
-    let Counter;
-    let counter;
+  let counter;
 
-    beforeEach(async () => {
-      Counter = await ethers.getContractFactory("Counter");
-      counter = Counter.deploy("My Counter App", 5);
-    });
-    it("Should set the name", async () => {
-      expect(await counter.getName()).to.equal("My Counter App");
+  beforeEach(async () => {
+    const Counter = await ethers.getContractFactory("Counter");
+    counter = await Counter.deploy("My Counter App", 5);
+  });
+
+  describe("Deployment", () => {
+    it("Should sets the name", async () => {
+      expect(await counter.name()).to.equal("My Counter App");
     });
 
     it("Should set the initial count", async () => {
